@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import AppContainer from './components/layout/AppContainer/AppContainer';
+import AddressSearchForm from './components/forms/address-search-form/AddressSearchForm';
+import AddressFormContextProvider from './contexts/address-form.context';
+import AddressInputForm from './components/forms/address-input-form/AddressInputForm';
+import SavedAddressList from './components/saved-address/SavedAddressList/SavedAddressList';
+import AppHeader from './components/layout/AppHeader/AppHeader';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AddressFormContextProvider>
+      <AppContainer>
+        <AppHeader />
+        <SavedAddressList />
+        <AddressSearchForm />
+        <AddressInputForm />
+      </AppContainer>
+    </AddressFormContextProvider>
   );
 }
 
