@@ -29,10 +29,11 @@ const AddressInputForm: React.FC = () => {
       });
       resetForm();
     }
-  }
+  };
 
   return showAddressForm ? (
     <Styles.StyledForm onSubmit={submitFormHandler}>
+      <img src="/icons/double-chevron.png" alt="Double chevron"/>
       <FormInputWrapper label="Address line 1*">
         <FormInput
           name="line1"
